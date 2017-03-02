@@ -1,0 +1,2 @@
+# DQLotteryTrend
+Simple lottery charts
