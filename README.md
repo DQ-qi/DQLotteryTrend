@@ -1,4 +1,3 @@
 # DQLotteryTrend
 Simple lottery charts
-/Users/dengqidengqi/Desktop/DQLotteryTrend/屏幕快照 2017-03-01 下午7.24.08.png
-/Users/dengqidengqi/Desktop/DQLotteryTrend/屏幕快照 2017-03-02 上午10.48.09.png
+![Image text](https://github.com/DQ-qi/DQLotteryTrend/blob/master/屏幕快照%202017-03-01%20下午7.24.08.png)
