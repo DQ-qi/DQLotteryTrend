@@ -10,23 +10,27 @@
 #import "DQTestView.h"
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet UIButton *button1;
+@property (nonatomic, strong) DQTestView *testView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    DQTestView *testView = [[DQTestView alloc]initWithFrame:CGRectMake(0, 64, 375, 667)
-                            ];
-    [self.view addSubview:testView];
+    
+    _button1.selected = YES;
+    _testView = [[DQTestView alloc]initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height-64)
+                 ];
+    [self.view addSubview:_testView];
     // Do any additional setup after loading the view, typically from a nib.
 }
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)buttonAction:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    [_testView DQRandomFormArrayFunction];
+    [_testView setNeedsDisplay];
+    //[self setNeedDisplay];
+    // _testView.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height-64);
 }
 
 

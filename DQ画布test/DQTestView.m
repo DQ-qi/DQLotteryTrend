@@ -2,8 +2,8 @@
 //  DQTestView.m
 //  DQ画布test
 //
-//  Created by 邓琪 dengqi on 2017/3/1.
-//  Copyright © 2017年 YuBei. All rights reserved.
+//  Created by 邓琪 on 2017/3/1.
+//  Copyright © 2017年 . All rights reserved.
 //
 
 #import "DQTestView.h"
@@ -31,13 +31,22 @@
         _fillDatas = [NSMutableArray array];
         _frameArr = [NSMutableArray new];
         
-        for (NSInteger i=0; i<_xDatas.count; i++) {
-            NSString *number = [self randomFormArray:_xDatas];
-            [_fillDatas addObject:number];
-        }
+        [self DQRandomFormArrayFunction];
         
     }
     return self;
+}
+- (void)DQRandomFormArrayFunction{
+    if (_frameArr.count>0) {
+        [_frameArr removeAllObjects];
+    }
+    if (_fillDatas.count>0) {
+        [_fillDatas removeAllObjects];
+    }
+    for (NSInteger i=0; i<_xDatas.count; i++) {
+        NSString *number = [self randomFormArray:_xDatas];
+        [_fillDatas addObject:number];
+    }
 }
 - (NSString *)randomFormArray:(NSArray *)array{
     
@@ -47,7 +56,6 @@
     return [NSString stringWithFormat:@"%ld",index];
 }
 - (void)drawRect:(CGRect)rect{
-    
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     //FormHeight 为格子的高度 7是离上边界的距离 不设置 就会出现显示边界的线不好控制
@@ -79,10 +87,45 @@
             }
             
         }
+        
         CGContextSetStrokeColorWithColor(context, [UIColor grayColor].CGColor);
         CGContextSetLineWidth(context, .4);
         CGContextMoveToPoint(context, j*FormWidth, 7);
         CGContextAddLineToPoint(context, j*FormWidth, maxNum*FormHeight+7);
+        CGContextDrawPath(context, kCGPathStroke);
+    }
+    
+    for (int i = 0; i<_fillDatas.count; i++) {
+        NSString *number = _fillDatas[i];
+        for (int x = 0; x < _xDatas.count; x++) {
+            
+            if ([number intValue] ==x) {
+                CGPoint point = CGPointMake(FormWidth*x+FormWidth/2+FormWidth, FormHeight*i+FormHeight/2+7);
+                NSString *str = NSStringFromCGPoint(point);
+                //保存圆中心的位置 给下面的连线
+                [_frameArr addObject:str];
+                
+            }
+        }
+    }
+    //画走势线
+    for (int i=0; i<_frameArr.count; i++) {
+        NSString *str = [_frameArr objectAtIndex:i];
+        CGPoint point = CGPointFromString(str);
+        // 设置画笔颜色
+        CGContextSetStrokeColorWithColor(context, [UIColor greenColor].CGColor);
+        CGContextSetLineWidth(context, 1.5);
+        if (i==0) {
+            
+            // 画笔的起始坐标
+            CGContextMoveToPoint(context, point.x, point.y);
+            
+        }else{
+            NSString *str1 = [_frameArr objectAtIndex:i-1];
+            CGPoint point1 = CGPointFromString(str1);
+            CGContextMoveToPoint(context, point1.x, point1.y);
+            CGContextAddLineToPoint(context, point.x,  point.y);
+        }
         CGContextDrawPath(context, kCGPathStroke);
     }
     
@@ -96,10 +139,6 @@
             if ([number intValue] ==x) {
                 //画圆圈
                 CGContextAddArc(context, FormWidth*x+FormWidth/2+FormWidth, FormHeight*i+FormHeight/2+7, FormHeight/2, 0, M_PI*2, 1);
-                CGPoint point = CGPointMake(FormWidth*x+FormWidth/2+FormWidth, FormHeight*i+FormHeight/2+7);
-                NSString *str = NSStringFromCGPoint(point);
-                //保存圆中心的位置 给下面的连线
-                [_frameArr addObject:str];
                 CGContextSetStrokeColorWithColor(context, [UIColor greenColor].CGColor);
                 CGContextDrawPath(context, kCGPathStroke);
                 
@@ -113,26 +152,6 @@
                 [numberStr drawInRect:CGRectMake((FormWidth-size.width)/2.0+x*FormWidth+FormWidth,(FormHeight-size.height)/2.0+i*FormHeight+7, FormWidth, FormHeight) withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:[UIColor redColor]}];
             }
         }
-    }
-    
-    for (int i=0; i<_frameArr.count; i++) {
-        NSString *str = [_frameArr objectAtIndex:i];
-        CGPoint point = CGPointFromString(str);
-        // 设置画笔颜色
-        CGContextSetStrokeColorWithColor(context, [UIColor greenColor].CGColor);
-        CGContextSetLineWidth(context, .4);
-        if (i==0) {
-            
-            // 画笔的起始坐标
-            CGContextMoveToPoint(context, point.x, point.y);
-            
-        }else{
-            NSString *str1 = [_frameArr objectAtIndex:i-1];
-            CGPoint point1 = CGPointFromString(str1);
-            CGContextMoveToPoint(context, point1.x, point1.y);
-            CGContextAddLineToPoint(context, point.x,  point.y);
-        }
-        CGContextDrawPath(context, kCGPathStroke);
     }
     
 }

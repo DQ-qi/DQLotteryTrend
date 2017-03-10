@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface DQTestView : UIView
-
+- (void)DQRandomFormArrayFunction;
 @end

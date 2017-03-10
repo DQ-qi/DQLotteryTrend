@@ -10,12 +10,12 @@
 		CC043BF51E666D6500E01468 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC043BF41E666D6500E01468 /* main.m */; };
 		CC043BF81E666D6500E01468 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC043BF71E666D6500E01468 /* AppDelegate.m */; };
 		CC043BFB1E666D6500E01468 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC043BFA1E666D6500E01468 /* ViewController.m */; };
-		CC043BFE1E666D6500E01468 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC043BFC1E666D6500E01468 /* Main.storyboard */; };
 		CC043C001E666D6500E01468 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC043BFF1E666D6500E01468 /* Assets.xcassets */; };
 		CC043C031E666D6500E01468 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC043C011E666D6500E01468 /* LaunchScreen.storyboard */; };
 		CC043C0E1E666D6600E01468 /* DQ__testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC043C0D1E666D6600E01468 /* DQ__testTests.m */; };
 		CC043C191E666D6600E01468 /* DQ__testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC043C181E666D6600E01468 /* DQ__testUITests.m */; };
 		CC043C281E666D7E00E01468 /* DQTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC043C271E666D7E00E01468 /* DQTestView.m */; };
+		CC32370D1E72C64E00542D5F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC32370C1E72C64E00542D5F /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +42,6 @@
 		CC043BF71E666D6500E01468 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CC043BF91E666D6500E01468 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		CC043BFA1E666D6500E01468 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		CC043BFD1E666D6500E01468 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CC043BFF1E666D6500E01468 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC043C021E666D6500E01468 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC043C041E666D6500E01468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +53,7 @@
 		CC043C1A1E666D6600E01468 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC043C261E666D7E00E01468 /* DQTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQTestView.h; sourceTree = "<group>"; };
 		CC043C271E666D7E00E01468 /* DQTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQTestView.m; sourceTree = "<group>"; };
+		CC32370C1E72C64E00542D5F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +110,7 @@
 				CC043BFA1E666D6500E01468 /* ViewController.m */,
 				CC043C261E666D7E00E01468 /* DQTestView.h */,
 				CC043C271E666D7E00E01468 /* DQTestView.m */,
-				CC043BFC1E666D6500E01468 /* Main.storyboard */,
+				CC32370C1E72C64E00542D5F /* Main.storyboard */,
 				CC043BFF1E666D6500E01468 /* Assets.xcassets */,
 				CC043C011E666D6500E01468 /* LaunchScreen.storyboard */,
 				CC043C041E666D6500E01468 /* Info.plist */,
@@ -251,9 +251,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC32370D1E72C64E00542D5F /* Main.storyboard in Resources */,
 				CC043C031E666D6500E01468 /* LaunchScreen.storyboard in Resources */,
 				CC043C001E666D6500E01468 /* Assets.xcassets in Resources */,
-				CC043BFE1E666D6500E01468 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,14 +317,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CC043BFC1E666D6500E01468 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CC043BFD1E666D6500E01468 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CC043C011E666D6500E01468 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -511,6 +503,7 @@
 				CC043C1F1E666D6600E01468 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CC043C201E666D6600E01468 /* Build configuration list for PBXNativeTarget "DQ画布testTests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +512,7 @@
 				CC043C221E666D6600E01468 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CC043C231E666D6600E01468 /* Build configuration list for PBXNativeTarget "DQ画布testUITests" */ = {
 			isa = XCConfigurationList;
@@ -527,6 +521,7 @@
 				CC043C251E666D6600E01468 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
