@@ -1,3 +1,7 @@
+彩票走势图
+==============
+可变化
+-------------
 # DQLotteryTrend
 Simple lottery charts
 一个简单的彩票走势图

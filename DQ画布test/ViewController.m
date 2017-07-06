@@ -25,12 +25,11 @@
     [self.view addSubview:_testView];
     // Do any additional setup after loading the view, typically from a nib.
 }
-- (IBAction)buttonAction:(UIButton *)sender {
+- (IBAction)buttonAction:(UIButton *)sender {//重画
     sender.selected = !sender.selected;
-    [_testView DQRandomFormArrayFunction];
-    [_testView setNeedsDisplay];
-    //[self setNeedDisplay];
-    // _testView.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height-64);
+    [_testView DQRandomFormArrayFunction];//清空数据
+    [_testView setNeedsDisplay];//通知系统视图的内容需要重绘 触发- (void)drawRect:(CGRect)rect方法
+    
 }
 
 
